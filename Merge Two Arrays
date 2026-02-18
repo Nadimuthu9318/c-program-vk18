@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int n1, n2;
+
+   
+    if (scanf("%d", &n1) != 1) return 0;
+    int arr1[n1];
+    for (int i = 0; i < n1; i++) scanf("%d", &arr1[i]);
+
+    
+    if (scanf("%d", &n2) != 1) return 0;
+    int arr2[n2];
+    for (int i = 0; i < n2; i++) scanf("%d", &arr2[i]);
+
+    int i = 0, j = 0;
+    int lastPrinted = -1e9; // Initialize with a value smaller than any possible input
+
+    while (i < n1 || j < n2) {
+        int current;
+
+        if (i < n1 && (j >= n2 || arr1[i] < arr2[j])) {
+            current = arr1[i++];
+        } else if (j < n2 && (i >= n1 || arr2[j] < arr1[i])) {
+            current = arr2[j++];
+        } else {
+            
+            current = arr1[i];
+            i++;
+            j++;
+        }
+
+      
+        if (current != lastPrinted) {
+            if (lastPrinted != -1e9) printf(" ");
+            printf("%d", current);
+            lastPrinted = current;
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
