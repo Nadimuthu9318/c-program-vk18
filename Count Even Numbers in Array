@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+
+    // Read the number of elements
+    if (scanf("%d", &n) != 1) return 0;
+
+    int num;
+    for (int i = 0; i < n; i++) {
+        // Read each number one by one
+        scanf("%d", &num);
+
+        // A number is even if it leaves no remainder when divided by 2
+        // Note: 0 is considered an even number in programming logic
+        if (num % 2 == 0) {
+            count++;
+        }
+    }
+
+    // Output the total count of even numbers
+    printf("%d\n", count);
+
+    return 0;
+}
