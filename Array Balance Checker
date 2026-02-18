@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    
+    // Read the size of the array
+    if (scanf("%d", &N) != 1) return 0;
+
+    int arr[N];
+    long long sum1 = 0, sum2 = 0;
+
+    // Read the array elements
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Calculate sum of the first half
+    for (int i = 0; i < N / 2; i++) {
+        sum1 += arr[i];
+    }
+
+    // Calculate sum of the second half
+    for (int i = N / 2; i < N; i++) {
+        sum2 += arr[i];
+    }
+
+    // Check if sums are equal
+    if (sum1 == sum2) {
+        printf("BALANCED\n");
+    } else {
+        printf("NOT BALANCED\n");
+    }
+
+    return 0;
+}
