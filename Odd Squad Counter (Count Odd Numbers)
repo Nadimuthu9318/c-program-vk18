@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int N, count = 0;
+
+    // Read the size of the army
+    if (scanf("%d", &N) != 1) return 0;
+
+    int soldierID;
+    for (int i = 0; i < N; i++) {
+        // Read each soldier ID
+        scanf("%d", &soldierID);
+
+        // Check if the number is odd
+        if (soldierID % 2 != 0) {
+            count++;
+        }
+    }
+
+    // Print the total count of odd numbers found
+    printf("%d\n", count);
+
+    return 0;
+}
