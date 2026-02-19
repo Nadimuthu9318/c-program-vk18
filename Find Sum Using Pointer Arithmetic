@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    
+  
+    if (scanf("%d", &n) != 1) return 0;
+
+    int *arr = (int *)malloc(n * sizeof(int));
+    if (arr == NULL) return 1;
+
+  
+    for (int i = 0; i < n; i++) {
+        scanf("%d", arr + i);
+    }
+
+    long long sum = 0;
+    int *ptr = arr; // Set a pointer to the start of the array
+
+   
+    for (int i = 0; i < n; i++) {
+        sum += *(ptr + i); // Dereference the pointer at the current offset
+    }
+
+
+    printf("%lld\n", sum);
+
+    free(arr);
+
+    return 0;
+}
