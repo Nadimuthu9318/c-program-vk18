@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int n, m;
+    int matrix[100][100];
+    int i, j;
+
+
+    scanf("%d %d", &n, &m);
+
+    
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < m; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+  
+    for(j = 0; j < m; j++) {
+        int max = matrix[0][j]; 
+
+        for(i = 1; i < n; i++) {
+            if(matrix[i][j] > max) {
+                max = matrix[i][j];
+            }
+        }
+
+        printf("%d\n", max);
+    }
+
+    return 0;
+}
